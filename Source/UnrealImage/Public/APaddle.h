@@ -35,6 +35,12 @@ private:
 	UPROPERTY(EditAnywhere, Category = "Movement");
 	float movementSpeed = 500.0f;
 
+	UPROPERTY(EditAnywhere, Category = "Movement");
+	float leftCondition = 500.0f;
+
+	UPROPERTY(EditAnywhere, Category = "Movement");
+	float rightCondition = 500.0f;
+
 	void MoveHorizontal(float Value);
 
 };

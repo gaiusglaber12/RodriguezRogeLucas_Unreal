@@ -27,8 +27,20 @@ void AAPaddle::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 	FVector newLocation = GetActorLocation();
-	newLocation.X = GetActorLocation().X + (movementDirection.X * movementSpeed* DeltaTime);
-	SetActorLocation(newLocation);
+	if (newLocation.X <= leftCondition && newLocation.X >= rightCondition) {
+		newLocation.X = GetActorLocation().X + (movementDirection.X * movementSpeed * DeltaTime);
+		SetActorLocation(newLocation);
+	}
+	else if (newLocation.X <= leftCondition)
+	{
+		newLocation.X = leftCondition;
+		SetActorLocation(newLocation);
+	}
+	else
+	{
+		newLocation.X = rightCondition;
+		SetActorLocation(newLocation);
+	}
 }
 
 // Called to bind functionality to input
