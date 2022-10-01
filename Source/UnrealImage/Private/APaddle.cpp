@@ -25,7 +25,7 @@ void AAPaddle::BeginPlay()
 void AAPaddle::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
+	//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Your Message"));
 	FVector newLocation = GetActorLocation();
 	if (newLocation.X <= leftCondition && newLocation.X >= rightCondition) {
 		newLocation.X = GetActorLocation().X + (movementDirection.X * movementSpeed * DeltaTime);
